@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yisangu - La plateforme de ticketing événementiel du Gabon. Achetez vos billets facilement via mobile money.">
+    <meta name="keywords" content="ticketing, événements, Gabon, billets, Moov, Airtel">
+    <title>Yisangu - Plateforme de Ticketing Événementiel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo img {
+            height: 50px;
+            width: 50px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            transition: opacity 0.3s;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            opacity: 0.7;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .btn {
+            padding: 14px 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: #d4af37;
+            color: #1a1a2e;
+        }
+
+        .btn-primary:hover {
+            background-color: #f0c855;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid #d4af37;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 60px;
+            color: #1a1a2e;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            border-color: #d4af37;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* How it works */
+        .how-it-works {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+
+        .how-it-works h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 60px;
+            color: #1a1a2e;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #d4af37;
+            color: #1a1a2e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        .step h3 {
+            color: #1a1a2e;
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a2e;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #d4af37;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.7;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            padding-top: 20px;
+            margin-top: 20px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                min-width: 250px;
+            }
+
+            .features h2,
+            .how-it-works h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADTAomsAAAACXBIWXMAACE4AAAhOAFlzQCLAAACQklEQVR4nO3a0W7CMAyGYS7BCBqiE0zATiDxBjwAr8AT8ABwBJiAE3ACToATMIETcAJOwAkYQEJISFNCk7VtErdt7fb/v0+KhNqO7dhOmtTp8vl8OZ/P5+v1ytXVFa3X62+vV6vV/f39/w0AYLFYfF+v16xWK1av18/H4/H7er1+vt/v1nQ6/fF4PLBer1mv11wul2w2G7bb7S8Wbdffm82G9XrN5XLhYrGgKArebjcul0sOh8P3er1ms9mw2Wy4XC4sl0uuVivOZjMOhwPH45HT6cR+v+dyuXA6nXg+n3m5XHi9XlnEpXnZbDZsNhv2+z3H45HD4cDxeOR2u3E6ndjtduz3e47HI9frlev1+v14PJ5brVZcLhcul8v3bDabHwBQFAXHw4H1es31eu3wS0FRFJxOJ1arFZfLhcvlwul04u12Y7fbcblcuFwuXK9XLpfL93g8crPZcLlcuFqtuF6vnE4nLpcL5/OZ0+nE5XLhfD5zPp85Ho8cj0eOxyOHw4HD4cDhcOBwOHA4HLhYLNjtduzWM2G9Xr9Pp1OHL4rP58Nut2OxWHC9XrlYLDgcDhwOBw6HA5fLhavVisvlwuVy4XK5cL1euVwuXC6Xy+XC+Xzmcrlwv9+5XC5cLhfOZzPn85nz+czlcuFyuXA4HLhcLlzP59f1euXj8cjz+czz+fz9fD5zPp+5XC5cLhfO5/NrPp+/n8/ny/l85nK5cDqduJzPn89nLtfz+f36fr+/zufz1+v1Sj6fT6fT+Xw+X67n8/l0Pp9Pl8vlcj6fX+fzeTmfz5fL5XK5Xv7+AcDf/Hx8v9/J4LkxTAzDMMwwDMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMw/Av+AQAA//8DAFvv6CPJl4f3AAAAAElFTkSuQmCC" alt="Yisangu Logo">
+                    <span>Yisangu</span>
+                </div>
+                <nav>
+                    <a href="#features">Fonctionnalités</a>
+                    <a href="#how">Fonctionnement</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Vos Billets, Partout, Toujours</h1>
+            <p>Découvrez Yisangu, la plateforme de ticketing événementiel du Gabon. Achetez vos billets facilement via mobile money et profitez des meilleurs événements.</p>
+            <div class="cta-buttons">
+                <a href="https://play.google.com/store/apps/details?id=com.yisangu.app" class="btn btn-primary">Télécharger sur Play Store</a>
+                <a href="https://apps.apple.com/app/yisangu" class="btn btn-secondary">Télécharger sur App Store</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Pourquoi choisir Yisangu ?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>💳 Paiement Mobile Money</h3>
+                    <p>Payez vos billets directement via Moov Money ou Airtel Money. Sécurisé, rapide et facile.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎫 Billets Numériques</h3>
+                    <p>Recevez vos billets instantanément sur votre téléphone. Plus besoin d'imprimer!</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📱 Application Mobile</h3>
+                    <p>Disponible sur iOS et Android. Accédez à vos billets n'importe quand, n'importe où.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎪 Tous les Événements</h3>
+                    <p>Concerts, spectacles, conférences et bien plus encore. Trouvez l'événement qui vous plaît.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>⚡ Instantané</h3>
+                    <p>Achetez vos billets en quelques secondes. Pas d'attente, pas de complications.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔒 Sécurisé</h3>
+                    <p>Vos données personnelles et vos paiements sont protégés. Fiabilité garantie.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how" class="how-it-works">
+        <div class="container">
+            <h2>Comment ça marche ?</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Téléchargez</h3>
+                    <p>Installez Yisangu sur votre téléphone</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Browsez</h3>
+                    <p>Découvrez les événements à venir</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Achetez</h3>
+                    <p>Sélectionnez vos billets et payez</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Profitez</h3>
+                    <p>Montrez votre billet et amusez-vous!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#privacy">Politique de Confidentialité</a>
+                <a href="#terms">Conditions d'Utilisation</a>
+                <a href="mailto:support@yisangu.ga" id="contact">Contact</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Yisangu SASU. Tous les droits réservés.</p>
+                <p>Gabon | Libreville</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
