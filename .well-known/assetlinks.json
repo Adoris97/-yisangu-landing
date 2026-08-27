@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.yisangu.app",
+      "sha256_cert_fingerprints": [
+        "2C:37:64:7B:2E:80:AF:DA:74:79:89:CE:1D:A7:5E:D0:9A:2B:C3:AB:06:C7:03:ED:7E:D0:BA:82:EE:A9:09:67"
+      ]
+    }
+  }
+]
